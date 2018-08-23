@@ -9,16 +9,20 @@ exports.createImageData = (width, height, data) => {
     if (isNaN(width) || width < 1 || isNaN(height) || height < 1) {
         throw TypeError('Index or size is negative or greater than the allowed amount');
     }
+    const length = width * height * 4;
     if (data === undefined) {
-        data = new Uint8ClampedArray(width * height * 4);
+        data = new Uint8ClampedArray(length);
         for (let y = 0; y < height; y++) {
             for (let x = 0; x < width; x++) {
                 const i = y * width + x;
-                data[i + 3] = 255;
+                data[i * 4 + 3] = 255;
             }
         }
     }
     if (data instanceof Uint8ClampedArray) {
+        if (data.length !== length) {
+            throw TypeError('Index or size is negative or greater than the allowed amount');
+        }
         return { width, height, data };
     }
     throw TypeError('Expected data to be Uint8ClampedArray or undefined');
@@ -41,7 +45,4 @@ class ImageData {
     }
 }
 exports.ImageData = ImageData;
-const im1 = new ImageData(50, 50);
-const im2 = new ImageData(new Uint8ClampedArray(), 50, 50);
-console.log(im1, im2);
 //# sourceMappingURL=index.js.map

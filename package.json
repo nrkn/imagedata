@@ -1,0 +1,23 @@
+{
+  "name": "imagedata",
+  "version": "0.1.0",
+  "description": "Pure Javascript implementation of ImageData",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && mocha",
+    "coverage": "tsc && nyc --reporter=html --reporter=text mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrkn/imagedata.git"
+  },
+  "keywords": [],
+  "author": "Nik Coughlin <nrkn.com@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrkn/imagedata/issues"
+  },
+  "homepage": "https://github.com/nrkn/imagedata#readme"
+}
