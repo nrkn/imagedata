@@ -1,13 +1,13 @@
 const assert = require( 'assert' )
-const { createImageData, ImageData } = require( '../dist' )
+const { createImage, ImageData } = require( '../dist' )
 
 describe( 'createImageData', () => {
   it( 'accepts valid width and height', () => {
-    assert.doesNotThrow( () => createImageData( 5, 5 ) )
+    assert.doesNotThrow( () => createImage( 5, 5 ) )
   })
 
   it( 'black rectangle if no data', () => {
-    const { width, height, data } = createImageData( 5, 5 )
+    const { width, height, data } = createImage( 5, 5 )
 
     for( let y = 0; y < height; y++ ){
       for( let x = 0; x < width; x++ ){
@@ -28,23 +28,23 @@ describe( 'createImageData', () => {
 
   it( 'accepts valid width, height and data', () => {
     const data = new Uint8ClampedArray( 5 * 5 * 4 )
-    assert.doesNotThrow( () => createImageData( 5, 5, data ) )
+    assert.doesNotThrow( () => createImage( 5, 5, data ) )
   })
 
   it( 'not enough arguments', () => {
-    assert.throws( () => createImageData() )
-    assert.throws( () => createImageData( 5 ) )
+    assert.throws( () => createImage() )
+    assert.throws( () => createImage( 5 ) )
   })
 
   it( 'bad arguments', () => {
-    assert.throws( () => createImageData( 'foo', 'bar' ) )
-    assert.throws( () => createImageData( 5, 0 ) )
-    assert.throws( () => createImageData( 5, -1 ) )
-    assert.throws( () => createImageData( 0, 5 ) )
-    assert.throws( () => createImageData( -1, 5 ) )
-    assert.throws( () => createImageData( 2, 2, [] ) )
-    assert.throws( () => createImageData( 5, 5, new Uint8ClampedArray( 25 ) ) )
-    assert.throws( () => createImageData( 5, 5, new Uint8ClampedArray( 101 ) ) )
+    assert.throws( () => createImage( 'foo', 'bar' ) )
+    assert.throws( () => createImage( 5, 0 ) )
+    assert.throws( () => createImage( 5, -1 ) )
+    assert.throws( () => createImage( 0, 5 ) )
+    assert.throws( () => createImage( -1, 5 ) )
+    assert.throws( () => createImage( 2, 2, [] ) )
+    assert.throws( () => createImage( 5, 5, new Uint8ClampedArray( 25 ) ) )
+    assert.throws( () => createImage( 5, 5, new Uint8ClampedArray( 101 ) ) )
   })
 })
 

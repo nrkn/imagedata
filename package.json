@@ -1,5 +1,5 @@
 {
-  "name": "imagedata",
+  "name": "rgba-image",
   "version": "0.1.0",
   "description": "Pure Javascript implementation of ImageData",
   "main": "./dist/index.js",
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nrkn/imagedata.git"
+    "url": "git+https://github.com/nrkn/rgba-image.git"
   },
   "keywords": [],
   "author": "Nik Coughlin <nrkn.com@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nrkn/imagedata/issues"
+    "url": "https://github.com/nrkn/rgba-image/issues"
   },
-  "homepage": "https://github.com/nrkn/imagedata#readme"
+  "homepage": "https://github.com/nrkn/rgba-image#readme"
 }

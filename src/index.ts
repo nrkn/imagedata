@@ -1,4 +1,4 @@
-export const createImageData = ( width: number, height: number, data?: Uint8ClampedArray ) => {
+export const createImage = ( width: number, height: number, data?: Uint8ClampedArray ) => {
   if ( width === undefined || height === undefined ) {
     throw TypeError( 'Not enough arguments' )
   }
@@ -47,9 +47,9 @@ export class ImageData implements RGBAImage {
     let imageData: RGBAImage
 
     if ( arg1 instanceof Uint8ClampedArray && arg3 !== undefined ){
-      imageData = createImageData( arg2, arg3, arg1 )
+      imageData = createImage( arg2, arg3, arg1 )
     } else if ( !( arg1 instanceof Uint8ClampedArray ) && arg1 !== undefined && arg2 !== undefined ){
-      imageData = createImageData( arg1, arg2 )
+      imageData = createImage( arg1, arg2 )
     } else {
       throw TypeError( 'Unexpected arguments at new ImageData' )
     }

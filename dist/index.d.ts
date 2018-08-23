@@ -1,4 +1,4 @@
-export declare const createImageData: (width: number, height: number, data?: Uint8ClampedArray | undefined) => RGBAImage;
+export declare const createImage: (width: number, height: number, data?: Uint8ClampedArray | undefined) => RGBAImage;
 export interface RGBAImage {
     width: number;
     height: number;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createImageData = (width, height, data) => {
+exports.createImage = (width, height, data) => {
     if (width === undefined || height === undefined) {
         throw TypeError('Not enough arguments');
     }
@@ -31,10 +31,10 @@ class ImageData {
     constructor(arg1, arg2, arg3) {
         let imageData;
         if (arg1 instanceof Uint8ClampedArray && arg3 !== undefined) {
-            imageData = exports.createImageData(arg2, arg3, arg1);
+            imageData = exports.createImage(arg2, arg3, arg1);
         }
         else if (!(arg1 instanceof Uint8ClampedArray) && arg1 !== undefined && arg2 !== undefined) {
-            imageData = exports.createImageData(arg1, arg2);
+            imageData = exports.createImage(arg1, arg2);
         }
         else {
             throw TypeError('Unexpected arguments at new ImageData');
